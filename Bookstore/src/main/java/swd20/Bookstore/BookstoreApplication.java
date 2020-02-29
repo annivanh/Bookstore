@@ -10,21 +10,16 @@ import swd20.Bookstore.domain.Book;
 import swd20.Bookstore.domain.BookRepository;
 
 @SpringBootApplication
-
 public class BookstoreApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(BookstoreApplication.class);
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(BookstoreApplication.class, args);
-
 	}
 
 	@Bean
-
 	public CommandLineRunner bookDemo(BookRepository bookRepository) {
-
 		return (args) -> {
 
 			log.info("save a couple of books");
@@ -36,13 +31,8 @@ public class BookstoreApplication {
 			log.info("fetch all books");
 
 			for (Book book : bookRepository.findAll()) {
-
 				log.info(book.toString());
-
 			}
-
 		};
-
 	}
-
 }

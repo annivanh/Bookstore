@@ -30,9 +30,12 @@ public class BookstoreApplication {
 			categoryRepository.save(new Category("Poetry"));
 			categoryRepository.save(new Category("Biography"));
 			
-			bookRepository.save(new Book("Thinking About It Only Makes It Worse", "Mitchell David", 2014, "2013121-32"));
-			bookRepository.save(new Book("The Godfather", "Puzo Mario", 1959, "93049101-89"));
-			bookRepository.save(new Book("The Flame", "Cohen Leonard", 2017, "40520234-19"));
+			bookRepository.save(new Book("Thinking About It Only Makes It Worse", "Mitchell David", 2014, "2013121-32",
+					categoryRepository.findByName("Non-Fiction").get(0)));
+			bookRepository.save(new Book("The Godfather", "Puzo Mario", 1959, "93049101-89",
+					categoryRepository.findByName("Fiction").get(0)));
+			bookRepository.save(new Book("The Flame", "Cohen Leonard", 2017, "40520234-19",
+					categoryRepository.findByName("Poetry").get(0)));
 			
 			
 			log.info("fetch all categories");

@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Book {
 
@@ -15,34 +16,16 @@ public class Book {
 	private String author;
 	private int year;
 	private String isbn;
-
-	public Book(Long id, String title, String author, int year, String isbn) {
-
-		super();
-		this.id = id;
-		this.title = title;
-		this.author = author;
-		this.year = year;
-		this.isbn = isbn;
-	}
+	
+	public Book() {}
+	
 
 	public Book(String title, String author, int year, String isbn) {
-
 		super();
 		this.title = title;
 		this.author = author;
 		this.year = year;
 		this.isbn = isbn;
-	}
-
-	public Book() {
-
-		super();
-		this.id = null;
-		this.title = null;
-		this.author = null;
-		this.year = 0;
-		this.isbn = null;
 	}
 
 	public void setId(Long id) {

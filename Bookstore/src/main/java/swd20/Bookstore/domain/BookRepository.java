@@ -6,4 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 public interface BookRepository extends CrudRepository<Book, Long> {
 
     List<Book> findByTitle(String title);
+    Long deleteByTitle(String title);
+    Long deleteByAuthor(String author);
 }
